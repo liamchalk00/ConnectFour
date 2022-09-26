@@ -1,0 +1,28 @@
+
+Tetris AI Connect-4
+Liam Chalk, Devon Overbey, and Samrath Machra
+
+Our AI Connect-4 game allows two human players, a human player and an AI, or two AIs to play Connect Four against
+each other. Our program has two different modes: Classic Connect-4 or Tetris Connect-4. 
+Classic Connect-4 has players add game pieces (either X or O) on a 7 by 6 board with X going first. The first player
+to have a row, column, or diagonal with four of their game pieces in a row wins.
+Tetris Connect-4 has the same win conditions, but there is a twist to the game play. If the bottom row of the
+Connect-4 board fills up completely, then it is erased and all of the rows move down one. This mechanic resembles
+the Tetris arcade game elimination of rows.
+The game can be started with the following commands:
+
+po = Player('O', 'RANDOM', ply)   #where ply can be increased to have a more advanced difficulty (but plays slower)
+b = Board(7, 6)          #to play Classic Connect-4 or
+b = Board(7, 6, True)    #to play Tetris Connect-4!
+b.playGame('human', po)  #to play the game as X
+
+The program works by implementing two different classes, the Board class and the Player class.
+The Board class sets up the board ASCII text, adding or removing moves to the board, checking if a specific column
+results in a win, and checking if the game is over and whether the result is a win for X a win for O or a tie.
+The Board class takes the inputs of the board width, height, and whether the game is being played as tetris or not.
+The Player class takes care of all the AI decision making, checking future moves to evaluate their score, and looking
+ply moves ahead to see the possible board situations.
+The Player class takes the inputs of whether the player is playing X or O, the preference of an AI to break a tie
+score by playing the left-most, right-most, or random highest score, and the ply of how many moves the AI will look
+ahead.
+We hope you have fun playing AI Classic Connect-4 or Tetris Connect-4!
